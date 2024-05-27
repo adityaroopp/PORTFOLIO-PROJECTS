@@ -1,0 +1,143 @@
+1.Select all records from the Customers table, sort the result alphabetically, first by the column Country, then, by the column City.
+SELECT * FROM CUSTOMERS
+ORDER BY COUNTRY, CITY;
+
+2. Select all records where the City column has the value 'Berlin' OR 'London'.
+SELECT FROM CUSTOMERS;
+WHERE CITY = "BERLIN'
+OR CITY = "LONDON";
+
+3.Use the NOT keyword to select all records where City is NOT "Berlin".
+SELECT * FROM CUSTOMERS
+WHERE NOT CITY = 'BERLIN';
+
+4.Insert a new record in the Customers table.
+INSERT INTO CUSTOMERS (
+CustomerName, 
+Address, 
+City, 
+PostalCode,
+Country )
+VALUES( 
+'Hekkan Burger',
+'Gateveien 15',
+'Sandnes',
+'4306',
+'Norway');
+
+5.Select all records from the Customers where the PostalCode column is empty.
+SELECT * FROM CUSTOMERS
+WHERE POSTALCODE IS NULL;
+
+6.Select all records from the Customers where the PostalCode column is NOT empty.
+SELECT * FROM CSUTOEMRS 
+WHRE POSTALCODE IS NOT NULL;
+
+7.Update the City column of all records in the Customers table.
+UPDATE CUSTOMERS
+SET CITY = 'OSLO';
+
+8.Set the value of the City columns to 'Oslo', but only the ones where the Country column has the value "Norway".
+UPDATE CUSTOMERS
+SET CITY ='OSLO'
+WHERE COUNTRY = 'NORWAY';
+
+9.Delete all the records from the Customers table where the Country value is 'Norway'.
+
+DELETE FROM Customers
+WHERE Country = 'Norway';
+
+10. Use the MIN function to select the record with the smallest value of the Price column.
+SELECT MIN(PRICE)
+FROM CUSTOMERS;
+
+11. Use the correct function to return the number of records that have the Price value set to 18.
+SELECT COUNT(*) FROM CUSTOMERS
+WHERE PRICE = '18';
+
+12.Select all records where the value of the City column starts with the letter "a".
+SELECT * FROM CUSTOMERS
+WHERE CITY LIKE 'a%';
+
+13.Select all records where the value of the City column ends with the letter "a".
+select * from customers
+where city like '%a';
+
+14. Select all records where the value of the City column contains the letter "a"
+SELECT * FROM CUSTOMERS
+WHERE CITY LIKE '%a%;
+
+15.Select all records where the value of the City column starts with letter "a" and ends with the letter "b".
+
+SELECT * FROM Customers
+WHERE CITY LIKE 'a%b';
+
+16.Select all records where the value of the City column does NOT start with the letter "a".
+SELECT * FROM Customers
+WHERE City NOT LIKE 'a%';
+
+17. Select all records where the second letter of the City is an "a".
+SELECT * FROM Customers
+WHERE City LIKE '_a%';
+
+18.Select all records where the first letter of the City is an "a" or a "c" or an "s".
+SELECT * FROM Customers
+WHERE City LIKE ' [acs] %';
+
+19.Select all records where the first letter of the City starts with anything from an "a" to an "f".
+SELECT * FROM Customers
+WHERE City LIKE '[a-f]%';
+
+20.Select all records where the first letter of the City is NOT an "a" or a "c" or an "f".
+SELECT * FROM Customers
+WHERE City LIKE ' [!acf]%';
+
+21.Use the IN operator to select all the records where Country is either "Norway" or "France".
+select * from customers
+where country in('France', or 'Norway');
+
+22.Use the IN operator to select all the records where Country is NOT "Norway" and NOT "France".
+SELECT * FROM CUSTOMERS 
+WHERE COUNTRY NOT IN ('Norway', 'France');
+
+23. Use the BETWEEN operator to select all the records where the value of the Price column is NOT between 10 & 20
+SELECT * FROM CUSTOMERS; 
+WHERE PRICE NOT BETWEEN 10 AND 20;
+
+24.When displaying the Customers table, make an ALIAS of the PostalCode column, the column should be called Pno instead.
+SELECT ADDRESS, POSTALCODE AS PNO FROM CUSTOMERS;
+
+----- (JOIN)------
+
+25. Insert the missing parts in the JOIN clause to join the two tables Orders and Customers, using the CustomerID field in both tables as the relationship between the two tables. 
+SELECT * FROM ORDERS 
+LEFT JOIN CUSTOMERS 
+ON ORDERS.CUSTOMERID=CUSTOMERS.CUSTOMERID
+
+26. Choose the correct JOIN clause to select all records from the two tables where there is a match in both tables.
+SELECT * FROM ORDERS 
+INNER JOIN CUSTOMERS
+ON ORDERS.CUSTOMERID= CUSTOMER.CUSTOMERID;
+
+27. Choose the correct JOIN clause to select all the records from the Customers table plus all the matches in the Orders table.
+SELECT * FROM ORDERS
+RIGHT JOIN CUSTOMERS
+ON ORDERS.CUSTOMERID.CUSTOMERS.CUSTOMERID;
+
+28.List the number of customers in each country, ordered by the country with the most customers first.
+SELECT COUNT(CustomerID)
+FROM CUSTOMERS 
+GROUP BY COUNTRY 
+ORDER BY (COUNT(CustomerID) DESC;
+
+29. Add a column of type DATE called Birthday.
+ALTER TABLE PERSONS
+ADD BIRTHDAY DATE;
+
+30. Add a column of type DATE called Birthday.
+ALTER TABLE PERSONS
+DROP COLUMN BIRTHDAY;
+
+
+
+
